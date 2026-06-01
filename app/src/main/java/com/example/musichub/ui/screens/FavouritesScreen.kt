@@ -8,13 +8,16 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.musichub.R
 import com.example.musichub.ui.components.CustomTopBar
 import com.example.musichub.ui.components.DefaultNavBar
 import com.example.musichub.ui.components.SongPreview
+import com.example.musichub.ui.components.SortBtn
 import com.example.musichub.ui.theme.NotSoBlack
 
 @Preview(
@@ -24,7 +27,8 @@ import com.example.musichub.ui.theme.NotSoBlack
 )
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen() {
+fun FavouritesScreen() {
+    var currentSort by remember { mutableStateOf("Title") }
     val scrollState = rememberLazyListState()
     val isScrolled by remember {
         derivedStateOf {
@@ -34,7 +38,7 @@ fun MainScreen() {
     Scaffold(
         modifier = Modifier,
         containerColor = NotSoBlack,
-        topBar = { CustomTopBar(isScrolled, "Songs") },
+        topBar = { CustomTopBar(isScrolled, "Favourites") },
         bottomBar = { DefaultNavBar() },
     ) { innerPadding ->
         LazyColumn(
@@ -42,6 +46,16 @@ fun MainScreen() {
             contentPadding = innerPadding,
             modifier = Modifier.fillMaxWidth(),
         ) {
+            // Вставляем кнопку сортировки как ПЕРВЫЙ элемент списка
+            item {
+                SortBtn (
+                    selectedSort = currentSort,
+                    onSortSelected = { newSort ->
+                        currentSort = newSort
+                        // ТУТ в будущем будет логика пересортировки твоего списка данных
+                    }
+                )
+            }
             items(50) { index ->
                 /*Test*/
                 SongPreview(R.drawable.fromzero,"Unshatter","Linkin Park")
