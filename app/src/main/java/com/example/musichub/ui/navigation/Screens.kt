@@ -2,11 +2,17 @@ package com.example.musichub.ui.navigation
 
 import kotlinx.serialization.Serializable
 
-@Serializable
-object MainScreen
-@Serializable
-object FavouritesScreen
-@Serializable
-object SongScreen
-@Serializable
-object SearchScreen
+sealed class Screen {
+
+    @Serializable
+    object MainScreen: Screen()
+
+    @Serializable
+    object FavouritesScreen: Screen()
+
+    @Serializable
+    object SongScreen: Screen()
+
+    @Serializable
+    object SearchScreen: Screen()
+}

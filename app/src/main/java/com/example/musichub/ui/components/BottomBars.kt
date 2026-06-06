@@ -7,13 +7,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import com.example.musichub.ui.theme.NotSoBlack
-import com.example.musichub.ui.icons.account_circle
 import com.example.musichub.ui.icons.favorite
 import com.example.musichub.ui.icons.more_horiz
 import com.example.musichub.ui.icons.music_note
+import com.example.musichub.ui.navigation.Screen
 
 @Composable
-fun DefaultNavBar(){
+fun DefaultNavBar(onNavigateTo: (Screen) -> Unit){
     NavigationBar(
         containerColor = NotSoBlack,
         contentColor = Color.White
@@ -26,8 +26,10 @@ fun DefaultNavBar(){
                 )
             },
             label = { Text(text = "Songs") },
-            selected = true,
-            onClick = { },
+            selected = false,
+            onClick = {
+                onNavigateTo(Screen.MainScreen)
+            },
         )
         NavigationBarItem(
             icon = {
@@ -38,7 +40,7 @@ fun DefaultNavBar(){
             },
             label = { Text(text = "Favourites") },
             selected = false,
-            onClick = { },
+            onClick = { onNavigateTo(Screen.FavouritesScreen) },
         )
         NavigationBarItem(
             icon = {
@@ -49,7 +51,7 @@ fun DefaultNavBar(){
             },
             label = { Text(text = "More") },
             selected = false,
-            onClick = { },
+            onClick = {  },
         )
     }
 }

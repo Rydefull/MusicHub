@@ -9,15 +9,15 @@ import com.example.musichub.ui.screens.MainScreen
 
 @Composable
 fun AppNavigation() {
-    val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = MainScreen) {
-        composable<MainScreen>{
-            MainScreen()
+    val navHostController = rememberNavController()
+    NavHost(navController = navHostController, startDestination = Screen.MainScreen) {
+        composable<Screen.MainScreen>{
+            MainScreen{navigateTo -> navHostController.navigate(navigateTo)}
         }
-        composable<FavouritesScreen> {
-            FavouritesScreen()
+        composable<Screen.FavouritesScreen> {
+            FavouritesScreen{navigateTo -> navHostController.navigate(navigateTo)}
         }
-        composable<SearchScreen> {
+        composable<Screen.SearchScreen> {
             //SearchScreen()
         }
     }

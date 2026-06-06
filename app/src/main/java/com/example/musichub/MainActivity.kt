@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.example.musichub.ui.screens.MainScreen
+import com.example.musichub.ui.navigation.AppNavigation
 import com.example.musichub.ui.theme.MusicHubTheme
 
 class MainActivity : ComponentActivity() {
@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MusicHubTheme {
-                MainScreen()
+                AppNavigation()
             }
         }
     }

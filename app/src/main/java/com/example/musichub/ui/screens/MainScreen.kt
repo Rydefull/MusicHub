@@ -10,21 +10,16 @@ import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.example.musichub.R
 import com.example.musichub.ui.components.CustomTopBar
 import com.example.musichub.ui.components.DefaultNavBar
 import com.example.musichub.ui.components.SongPreview
+import com.example.musichub.ui.navigation.Screen
 import com.example.musichub.ui.theme.NotSoBlack
 
-@Preview(
-    showBackground = true, // Включает белый/черный фон позади экрана, чтобы он не был прозрачным
-    showSystemUi = true,   // Показывает верхний статус-бар телефона и нижнюю навигацию
-    name = "Explore Screen Preview" // Название вкладки в панели дизайна
-)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen() {
+fun MainScreen(onNavigateTo: (Screen) -> Unit) {
     val scrollState = rememberLazyListState()
     val isScrolled by remember {
         derivedStateOf {
@@ -35,7 +30,7 @@ fun MainScreen() {
         modifier = Modifier,
         containerColor = NotSoBlack,
         topBar = { CustomTopBar(isScrolled, "Songs") },
-        bottomBar = { DefaultNavBar() },
+        bottomBar = { DefaultNavBar(onNavigateTo) },
     ) { innerPadding ->
         LazyColumn(
             state = scrollState,
