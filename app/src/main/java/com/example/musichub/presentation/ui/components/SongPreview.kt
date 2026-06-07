@@ -1,4 +1,4 @@
-package com.example.musichub.ui.components
+package com.example.musichub.presentation.ui.components
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
@@ -15,7 +15,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.example.musichub.ui.theme.NotSoBlack
+import com.example.musichub.presentation.ui.theme.NotSoBlack
 
 @Composable
 fun SongPreview(@DrawableRes id: Int, name: String, band: String) {

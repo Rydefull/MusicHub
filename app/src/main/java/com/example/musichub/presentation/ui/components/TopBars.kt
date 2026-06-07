@@ -1,4 +1,4 @@
-package com.example.musichub.ui.components
+package com.example.musichub.presentation.ui.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically

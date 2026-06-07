@@ -1,4 +1,4 @@
-package com.example.musichub.ui.navigation
+package com.example.musichub.presentation.ui.navigation
 
 import kotlinx.serialization.Serializable
 

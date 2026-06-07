@@ -1,11 +1,11 @@
-package com.example.musichub.ui.components
+package com.example.musichub.presentation.ui.components
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.example.musichub.ui.theme.AntonioFontFamily
+import com.example.musichub.presentation.ui.theme.AntonioFontFamily
 
 @Composable
 fun SectionTitle(title: String) {

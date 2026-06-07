@@ -1,4 +1,4 @@
-package com.example.musichub.ui.components
+package com.example.musichub.presentation.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -27,7 +27,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.musichub.ui.theme.NotSoBlack
+import com.example.musichub.presentation.ui.theme.NotSoBlack
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

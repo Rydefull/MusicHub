@@ -1,4 +1,4 @@
-package com.example.musichub.ui.screens
+package com.example.musichub.presentation.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -27,7 +27,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.musichub.ui.icons.account_circle
+import com.example.musichub.presentation.ui.icons.account_circle
 
 @Preview
 @OptIn(ExperimentalMaterial3Api::class)

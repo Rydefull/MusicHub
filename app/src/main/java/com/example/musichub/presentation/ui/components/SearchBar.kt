@@ -1,4 +1,4 @@
-package com.example.musichub.ui.components
+package com.example.musichub.presentation.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,7 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.musichub.R
-import com.example.musichub.ui.icons.search
+import com.example.musichub.presentation.ui.icons.search
 
 @Composable
 fun SearchBar() {

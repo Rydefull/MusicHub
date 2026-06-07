@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MusicHub</string>
+    <string name="app_name">ChordsFinder</string>
     <string name="search_song">Enter song name</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
