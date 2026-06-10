@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 sealed class Screen {
 
     @Serializable
-    object MainScreen: Screen()
+    object SearchedSongsScreen: Screen()
 
     @Serializable
     object FavouritesScreen: Screen()

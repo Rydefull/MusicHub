@@ -5,7 +5,12 @@ import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
+import androidx.navigation.NavController
 import com.example.musichub.presentation.ui.theme.NotSoBlack
 import com.example.musichub.presentation.ui.icons.favorite
 import com.example.musichub.presentation.ui.icons.more_horiz
@@ -13,7 +18,8 @@ import com.example.musichub.presentation.ui.icons.music_note
 import com.example.musichub.presentation.ui.navigation.Screen
 
 @Composable
-fun DefaultNavBar(onNavigateTo: (Screen) -> Unit){
+fun DefaultNavBar(navController: NavController) {
+    var selectedItemIndex by rememberSaveable { mutableIntStateOf(0) }
     NavigationBar(
         containerColor = NotSoBlack,
         contentColor = Color.White
@@ -26,9 +32,10 @@ fun DefaultNavBar(onNavigateTo: (Screen) -> Unit){
                 )
             },
             label = { Text(text = "Songs") },
-            selected = false,
+            selected = selectedItemIndex == 0,
             onClick = {
-                onNavigateTo(Screen.MainScreen)
+                selectedItemIndex = 0
+                navController.navigate(Screen.SearchedSongsScreen)
             },
         )
         NavigationBarItem(
@@ -39,8 +46,11 @@ fun DefaultNavBar(onNavigateTo: (Screen) -> Unit){
                 )
             },
             label = { Text(text = "Favourites") },
-            selected = false,
-            onClick = { onNavigateTo(Screen.FavouritesScreen) },
+            selected = selectedItemIndex == 1,
+            onClick = {
+                selectedItemIndex = 1
+                navController.navigate(Screen.FavouritesScreen)
+            },
         )
         NavigationBarItem(
             icon = {
@@ -51,7 +61,7 @@ fun DefaultNavBar(onNavigateTo: (Screen) -> Unit){
             },
             label = { Text(text = "More") },
             selected = false,
-            onClick = {  },
+            onClick = { },
         )
     }
 }
