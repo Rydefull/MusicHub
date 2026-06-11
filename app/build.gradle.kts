@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.musichub"
+    namespace = "com.example.chordsfinder"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.example.musichub"
+        applicationId = "com.example.chordsfinder"
         minSdk = 29
         targetSdk = 36
         versionCode = 1
